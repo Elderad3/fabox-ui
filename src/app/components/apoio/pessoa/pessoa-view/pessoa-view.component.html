@@ -1,0 +1,114 @@
+<page-container [titulo]="titulo">
+
+      <!--começo da linha 1 -->
+      <div class="ui-g">
+          <div class="ui-g-12 ui-md-2">
+              <p-radioButton name="tipoPessoa" value="PJ" label="Pessoa Jurídica" [ngModel]="pessoa.tipoPessoa"
+                  inputId="opt1" [disabled]="true"></p-radioButton>
+          </div>
+          <div class="ui-g-12 ui-md-2">
+              <p-radioButton name="tipoPessoa" value="PF" label="Pessoa Física" [ngModel]="pessoa.tipoPessoa"
+                  inputId="opt2"  [disabled]="true"></p-radioButton>
+          </div>
+          <div class="ui-g-12 ui-md-4 ui-fluid">
+              <label>Data de Cadastro: </label>{{pessoa.dataCadastro | date:'dd/MM/yyyy, h:mm a' }}
+          </div>
+         
+
+      <!-- Fim da linha 1 -->
+
+      <!-- começo da linha 2 -->
+      <div class="ui-g" >
+          <div class="ui-g-12 ui-md-8 ui-fluid">
+              <label>Nome </label>
+              <input pInputText type="text" name="nome" [ngModel]="pessoa.nome" readonly class="readonly" >
+          </div>
+          <div class="ui-g-12 ui-md-4 ui-fluid"> </div>
+      </div>
+      <!-- fim da linha 2 -->
+
+      <!-- começo da linha 3 -->
+      <div class="ui-g">
+          <div class="ui-g-12 ui-md-4 ui-fluid">
+              <label>Email </label>
+              <input pInputText type="text" name="email" [ngModel]="pessoa.email" readonly class="readonly" >
+             
+          </div>
+          <div class="ui-g-12 ui-md-2 ui-fluid">
+              <div *ngIf="pessoa.tipoPessoa == 'PJ'">
+                  <label>CNPJ </label>
+                  <input pInputText type="text" [ngModel]="pessoa.cnpj" readonly class="readonly">
+              </div>
+              <div *ngIf="pessoa.tipoPessoa == 'PF'">
+                  <label>CPF </label>
+                  <input pInputText type="text" name="cpf" [ngModel]="pessoa.cpf" readonly class="readonly">
+              </div>
+          </div>
+          <div class="ui-g-12 ui-md-4 ui-fluid">
+              <label>Telefone </label>
+              <input pInputText type="text" name="telefone" [ngModel]="pessoa.telefone" readonly class="readonly">
+          </div>
+          <div class="ui-g-12 ui-md-3 ui-fluid"> </div>
+
+      </div>
+      <!-- fim da linha 3 -->
+
+
+      <!--começo da tabview de endereço-->
+      <p-tabView>
+          <p-tabPanel header="Endereços" leftIcon="pi pi-calendar">
+              <div class="ui-g">
+                  <div class="ui-g-12  ui-md-12">
+                      <p-toolbar>
+                          <div class="ui-toolbar-group-left">
+                              <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                              <input #gb type="text" pInputText size="50" placeholder="Filtro Global">
+                          </div>
+                          <div class="ui-toolbar-group-right">
+                            
+                          </div>
+                      </p-toolbar>
+                  </div>
+              </div>
+              <div class="ui-g">
+                  <div class="ui-g-12  ui-md-12">
+                      <p-table #dt [columns]="cols" [value]="null" dataKey="id" [resizableColumns]="true">
+                          <ng-template pTemplate="colgroup" let-columns>
+                              <colgroup>
+                                  <col *ngFor="let col of columns" [style.width]="col.width">
+                              </colgroup>
+                          </ng-template>
+                          <ng-template pTemplate="header">
+                              <tr>
+                                  <th *ngFor="let col of cols" pResizableColumn>{{col.header}}</th>
+                              </tr>
+                          </ng-template>
+                          <ng-template pTemplate="body" let-rowData let-columns="columns">
+                              <tr [pSelectableRow]="rowData">
+                                  <td *ngFor="let col of columns">
+                                      {{rowData[col.field]}}
+                                  </td>
+                              </tr>
+                          </ng-template>
+                          <ng-template pTemplate="emptymessage" let-columns>
+                              <tr>
+                                  <td [attr.colspan]="columns.length">
+                                      Nenhum registro encontrado
+                                  </td>
+                              </tr>
+                          </ng-template>
+                      </p-table>
+                  </div>
+              </div>
+          </p-tabPanel>
+      </p-tabView>
+      <!--Fim da tabview de endereço-->
+
+
+      <!-- começo da linha dos botões -->
+      <div class="ui-g">
+          <div class="ui-g-12">
+              <button pButton type="button" icon="pi pi-arrow-left" (click)="voltar()" label="Sair"></button>
+          </div>
+      </div>
+      <!-- fim da linha dos botões -->

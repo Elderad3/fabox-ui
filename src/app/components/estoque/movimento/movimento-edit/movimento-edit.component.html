@@ -1,0 +1,80 @@
+<page-container [titulo]="titulo">
+    <dialog-mensage [display]="display" [msgContent]="msgContent" (fechaDialogo)="fecharDialogoItem($event)">
+    </dialog-mensage>
+
+    <form autocomplete="off" (ngSubmit)="validarEstoque(movimento)" #form="ngForm" [ngFormOptions]="{updateOn:'blur'}">
+
+        <!--começo da linha 1 -->
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-12 ui-fluid">
+                <label>Data de Cadastro: </label>{{movimento.dataMovimento | date:'dd/MM/yyyy, h:mm a' }}
+            </div>
+        </div>
+        <!-- Fim da linha 1 -->
+
+        <!-- começo da linha 2 -->
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-3 ui-fluid">
+                <label>Operação</label>
+                <p-dropdown name="operacao" [options]="operacoes" placeholder="Selecione"
+                    [autoWidth]="false" [(ngModel)]="movimento.operacao" optionLabel="nome" required
+                    #operacao="ngModel"></p-dropdown>
+                <!-- <app-mensagens [control]="operacao" error="required" [text]="msgForm.required"></app-mensagens> -->
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Produto</label>
+                <p-dropdown  name="produto" [options]="produtos" placeholder="Selecione"
+                    [autoWidth]="false" [(ngModel)]="movimento.produto" optionLabel="nome" required #produto="ngModel">
+                </p-dropdown>
+                <!-- <app-mensagens [control]="produto" error="required" [text]="msgForm.required"></app-mensagens> -->
+            </div>
+            <div class="ui-g-12 ui-md-3" *ngIf="movimento?.produto">
+                <label>Qtd. em Estoque</label>
+                <input pInputText type="number" name="quantidadeEstoque" [(ngModel)]="movimento.produto.estoqueAtual"
+                    readonly class="readonly">
+            </div>
+        </div>
+
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-3 ui-fluid">
+                <label>Quantidade</label>
+                <input pInputText type="number" name="quantidade" [(ngModel)]="movimento.quantidade"
+                    #quantidade="ngModel" required minlength="1" pattern="^[0-9]*$" (blur)="calcularCustoTotal()">
+                <app-mensagens [control]="quantidade" error="required" [text]="msgForm.required"></app-mensagens>
+                <app-mensagens [control]="quantidade" error="pattern" [text]="msgForm.numero"></app-mensagens>
+            </div>
+            <div class="ui-g-12 ui-md-3 ui-fluid">
+                <label>Valor Unitário</label>
+                <input pInputText  placeholder=" R$ 0,00" currencyMask [(ngModel)]="movimento.custoUnitario"
+                    name="custoUnitario" #custoUnitario="ngModel"
+                    [ngClass]="{'readonly': movimento?.operacao?.valor == 'S'}"
+                    [readonly]="movimento?.operacao?.valor == 'S'" (blur)="calcularCustoTotal()" min="0.04"
+                    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                <app-mensagens [control]="custoUnitario" error="min" [text]="msgForm.minMoney"></app-mensagens>
+            </div>
+            <div class="ui-g-12 ui-md-3 ui-fluid">
+                <label>Custo Total</label>
+                <input pInputText  placeholder=" R$ 0,00" currencyMask [(ngModel)]="movimento.custoTotal"
+                    name="custoTotal" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ','}" readonly
+                    class="readonly">
+            </div>
+        </div>
+        <!-- fim da linha 2 -->
+
+        <!-- começo da linha dos botões -->
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <button pButton type="submit" [disabled]="form.form.invalid" icon="pi pi-check" label="Salvar"></button>
+                <button pButton type="button" icon="pi pi-arrow-left" (click)="voltar()" label="Sair"></button>
+            </div>
+        </div>
+    </form>
+    <!-- fim da linha dos botões -->
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <p>Valores do Form:{{form.value | json }}</p>
+            <p>Form Está válido?{{form.valid }}</p>
+        </div>
+    </div>
+</page-container>

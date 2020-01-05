@@ -1,0 +1,129 @@
+<page-container [titulo]="titulo">
+    <dialog-mensage [display]="display" [msgContent]="msgContent" (fechaDialogo)="fecharDialogoItem($event)">
+    </dialog-mensage>
+    <div class="ui-g">
+        <div class="ui-g-12  ui-md-4  ui-fluid">
+            <input #gb type="text" pInputText placeholder="Filtro Global"
+                (input)="dt.filterGlobal($event.target.value, 'contains')">
+        </div>
+        <div class="ui-g-12  ui-md-8 ui-rtl" dir="rtl">
+            <button pButton class="ui-button-warning" *ngIf="transacaoSelecionado?.isAtivo == 'Não' "
+                [disabled]="!transacaoSelecionado" type="button" (click)="ativar()" label="Deixar de Ignorar"
+                icon="pi pi-lock"></button>
+            <button *ngIf="transacaoSelecionado?.isAtivo == 'Sim'" [disabled]="!transacaoSelecionado" pButton
+                type="button" (click)="desativar()" label="Ignorar" icon="pi pi-unlock"
+                class="ui-button-warning"></button>
+            <button pButton type="button" (click)="prepararIncersaoExtrato()" label="Carregar Extrato" icon="pi pi-plus"></button>
+            <button pButton type="button" [disabled]="!transacaoSelecionado" (click)="editarItem()" label="Editar"
+                icon="pi pi-pencil"></button>
+            <button pButton type="button" [disabled]="!transacaoSelecionado" (click)="removerItem()" label="Excluir"
+                icon="pi pi-trash "></button>
+            <button pButton type="button" (click)="prepararIncersaoItem()" label="Inserir" icon="pi pi-plus"></button>
+        </div>
+    </div>
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-12">
+            <p-table #dt [columns]="cols" [value]="transacaos" selectionMode="single"
+                [(selection)]="transacaoSelecionado" dataKey="id" resizableColumns="true">
+                <ng-template pTemplate="colgroup">
+                    <colgroup>
+                        <col *ngFor="let col of cols" [style.width]="col.width">
+                    </colgroup>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th *ngFor="let col of cols" pResizableColumn [pSortableColumn]="col.field">
+                            {{col.header}}
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData>
+                    <tr [pSelectableRow]="rowData">
+                        <td *ngFor="let col of cols" class="ui-resizable-column" [ngSwitch]="col.field" >
+                            <span *ngSwitchCase="'id'">{{rowData[col.field]}}</span>
+                            <span *ngSwitchCase="'conta'">{{rowData[col.field]}}</span>
+                            <span *ngSwitchCase="'data'">{{rowData[col.field]  | date:'dd/MMM/yyyy'}}</span>
+                            <span *ngSwitchCase="'descricao'">{{rowData[col.field]}}</span>
+                            <span *ngSwitchCase="'categoria'">{{rowData[col.field]}}</span>
+                            <span  *ngSwitchCase="'valor'" [ngClass]="rowData[col.field] <= 0 ? 'negativo' : 'positivo'" >R$ {{rowData[col.field] | number:'1.2-2'}}</span>
+                         
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage" let-columns>
+                    <tr>
+                        <td [attr.colspan]="cols.length">
+                            Nenhum registro encontrado
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
+    <!-- Início do diálogo de cadastro de itens da tabela -->
+    <p-dialog width="700" [header]="headerModal" [(visible)]="displayDialog" modal="modal" [responsive]="true"
+        showEffect="fade">
+        <form autocomplete="off" #transacaoForm="ngForm" id="transacaoForm" [ngFormOptions]="{updateOn:'blur'}">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-12 ui-fluid">
+                    <label>Nome</label>
+                    <input pInputText type="text" name="nome" [(ngModel)]="transacao.descricao" #nome="ngModel" required
+                        minlength="5">
+                    <app-mensagens [control]="nome" error="required" [text]="msgForm.required">
+                    </app-mensagens>
+                    <app-mensagens [control]="nome" error="minlength" [text]="msgForm.min5">
+                    </app-mensagens>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-fluid">
+                <label>Categoria</label>
+                <input pInputText type="text" name="categoria" [(ngModel)]="transacao.categoria" #categoria="ngModel"
+                    required minlength="2">
+                <app-mensagens [control]="categoria" error="required" [text]="msgForm.required">
+                </app-mensagens>
+                <app-mensagens [control]="categoria" error="minlength" [text]="msgForm.min2"></app-mensagens>
+            </div>
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-12 ui-rtl" dir="rtl">
+                    <button type="button" pButton icon="pi pi-check" [disabled]="transacaoForm.form.invalid"
+                        (click)="inserirItem()" label="Confirmar"></button>
+                    <button type="button" pButton icon="pi pi-times" (click)="cancelar()" label="Cancelar"></button>
+                </div>
+            </div>
+        </form>
+    </p-dialog>
+
+    <!-- Fim do diálogo de cadastro de itens da tabela -->
+
+     <!-- Início do diálogo de carregamento do extrato -->
+     <p-dialog width="700" [header]="headerModal2" [(visible)]="displayDialog2" modal="modal" [responsive]="true"
+     showEffect="fade">
+         <div class="ui-g">
+                <div class="ui-g-12 ui-md-12 ui-fluid">
+                        <h3 class="first">Advanced</h3>
+                        <!-- <p-fileUpload name="demo[]" chooseLabel="Escolher"  url="http://localhost:8080/transacao" uploadLabel="Enviar"  cancelLabel="Cancelar" (onUpload)="onUpload($event)"
+                                 accept=".ofx" maxFileSize="1000000">
+                            <ng-template pTemplate="content">
+                                <ul *ngIf="uploadedFiles.length">
+                                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                                </ul>
+                            </ng-template>
+                        </p-fileUpload> -->
+                    
+                            <input type="file" name="arquivo" (change)="onUpload($event)" />
+                        
+                </div>
+            </div>
+         <div class="ui-g">
+             <div class="ui-g-12 ui-md-12 ui-rtl" dir="rtl">
+                 <button type="button" pButton icon="pi pi-check" [disabled]="transacaoForm.form.invalid"
+                     (click)="inserirItem()" label="Confirmar"></button>
+                 <button type="button" pButton icon="pi pi-times" (click)="cancelar()" label="Cancelar"></button>
+             </div>
+         </div>
+ </p-dialog>
+
+ <!-- Fim do diálogo de de carregamento do extrato -->
+</page-container>

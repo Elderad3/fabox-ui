@@ -1,0 +1,47 @@
+<page-container [titulo]="titulo">
+
+    <!--começo da linha 1 -->
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-12 ui-fluid">
+            <label>Data de Cadastro: </label>{{movimento.dataMovimento | date:'dd/MM/yyyy, h:mm a' }}
+        </div>
+    </div>
+
+    <!-- Fim da linha 1 -->
+
+    <!-- começo da linha 2 -->
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Operação</label>
+            <input pInputText type="text" name="operacao" [ngModel]="movimento.operacao" readonly class="readonly">
+        </div>
+        <div class="ui-g-12 ui-md-8 ui-fluid">
+            <label>Produto</label>
+            <input pInputText type="text" name="produto" [ngModel]="movimento.produto.nome" readonly class="readonly">
+        </div>
+
+    </div>
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Quantidade</label>
+            <input pInputText type="text" name="quantidade" [ngModel]="movimento.quantidade" readonly class="readonly">
+        </div>
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Valor Unitário</label>
+            <input pInputText type="text" name="valorUnitario" [ngModel]="movimento.custoUnitario" readonly class="readonly">
+        </div>
+        <div class="ui-g-12 ui-md-4 ui-fluid">
+            <label>Custo Total</label>
+            <input pInputText type="text" name="custoTotal" [(ngModel)]="movimento.custoTotal" readonly class="readonly">
+        </div>
+    </div>
+    <!-- fim da linha 2 -->
+
+    <!-- começo da linha dos botões -->
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <button pButton type="button" icon="pi pi-arrow-left" (click)="voltar()" label="Sair"></button>
+        </div>
+    </div>
+    <!-- fim da linha dos botões -->
+</page-container>

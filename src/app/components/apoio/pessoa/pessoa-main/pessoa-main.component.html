@@ -1,0 +1,51 @@
+<page-container [titulo]="titulo">
+<dialog-mensage [display]="display" [msgContent]="msgContent" (fechaDialogo)="fecharDialogoItem($event)"></dialog-mensage>
+<div class="ui-g">
+    <div class="ui-g-12  ui-md-4  ui-fluid">
+    <input #gb type="text" pInputText placeholder="Filtro Global"
+                (input)="dt.filterGlobal($event.target.value, 'contains')">
+    </div>
+    <div class="ui-g-12  ui-md-8 ui-rtl" dir="rtl">
+            <button pButton type="button" [disabled]="!pessoaSelecionado" (click)="visualizar()" label="Visualizar"
+            icon="pi pi-search"></button>
+        <button pButton type="button" [disabled]="!pessoaSelecionado" (click)="editar()" label="Editar"
+            icon="pi pi-pencil"></button>
+        <button pButton type="button" [disabled]="!pessoaSelecionado" (click)="remover()" label="Excluir"
+            icon="pi pi-trash " class="ui-button-danger"></button>
+        <button pButton type="button" routerLink="/pessoaEdit" label="Inserir" icon="pi pi-plus"></button> 
+    </div>
+</div>
+
+<div class="ui-g">
+    <div class="ui-g-12 ui-md-12"> 
+        <p-table #dt [columns]="cols" [value]="pessoas" selectionMode="single" [(selection)]="pessoaSelecionado"
+            dataKey="id" resizableColumns="true">
+            <ng-template pTemplate="colgroup">
+                <colgroup>
+                    <col *ngFor="let col of cols" [style.width]="col.width">
+                </colgroup>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of cols" pResizableColumn [pSortableColumn]="col.field">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData>
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of cols" class="ui-resizable-column">{{rowData[col.field]}}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage" let-columns>
+                <tr>
+                    <td [attr.colspan]="cols.length">
+                        Nenhum registro encontrado
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+</page-container>

@@ -1,0 +1,6 @@
+<p-dialog header="Mensagem" [(visible)]="display" modal="true" width="300" [responsive]="true">
+  <p>{{msgContent}}</p>
+<p-footer>
+    <button type="button" pButton (click)="fecharDialogo()" label="OK"></button>
+</p-footer>
+</p-dialog>

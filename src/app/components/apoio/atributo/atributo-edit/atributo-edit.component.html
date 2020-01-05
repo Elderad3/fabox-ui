@@ -1,0 +1,85 @@
+<page-container [titulo]="titulo">
+
+    <form autocomplete="off" (ngSubmit)="salvarAtributo()" #form="ngForm" id="form" [ngFormOptions]="{updateOn:'blur'}">
+
+        <!-- começo da linha -->
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-2 ui-fluid">
+                <label>Nome </label>
+                <input pInputText type="text" name="nome" [(ngModel)]="atributo.nome" #nome="ngModel" required
+                    minlength="5">
+                <app-mensagens [control]="nome" error="required" [text]="msgForm.required"></app-mensagens>
+                <app-mensagens [control]="nome" error="minlength" [text]="msgForm.min5"></app-mensagens>
+            </div>
+            <div class="ui-g-12 ui-md-2 ui-fluid" *ngIf="atributo">
+                    <label>Esquema </label> 
+                    <p-dropdown  name="esquema" [options]="esquemas" placeholder="Selecione"
+                    [autoWidth]="false" [(ngModel)]="atributo.esquema" optionLabel="mascara" #esquema="ngModel" required>
+                   </p-dropdown>
+            </div>
+            <div class="ui-g-12 ui-md-2 ui-fluid"  *ngIf="atributo.esquema">
+                    <label>Tabela </label> 
+                    <p-dropdown  name="tabela" [options]="atributo.esquema.tabelas" placeholder="Selecione" filter="true"
+                    [autoWidth]="false" [(ngModel)]="atributo.tabela" optionLabel="mascara" #tabela="ngModel" required>
+                    </p-dropdown>
+            </div>
+        </div>
+        <!-- fim da linha-->
+
+         <!-- começo da linha -->
+         <div class="ui-g" *ngIf="atributo.tabela">
+            <div class="ui-g-12 ui-md-5 ui-fluid">
+                <hr>
+            <label>Colunas </label>
+                <p-pickList  [source]="atributo.tabela.colunas" [target]="atributo.colunasSelecionadas" sourceHeader="Disponíveis" targetHeader="Selecionados" [responsive]="true" filterBy="mascara" 
+                dragdrop="true" sourceFilterPlaceholder="pesquisar" targetFilterPlaceholder="pesquisar" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}">
+                        <ng-template let-coluna pTemplate="item">
+                            <div class="ui-helper-clearfix">
+                                <div>{{coluna.mascara}}</div>
+                            </div>
+                        </ng-template>
+                    </p-pickList>
+                </div>
+            </div>
+            <!-- fim da linha-->
+            <!-- começo da linha -->
+                <div class="ui-g">
+                        <div class="ui-g-12 ui-md-2 ui-fluid">
+                            <label>Tamanho </label>
+                            <input pInputText type="text" name="tamanho" [(ngModel)]="atributo.tamanho" #tamanho="ngModel" required
+                                minlength="1">
+                            <app-mensagens [control]="tamanho" error="required" [text]="msgForm.required"></app-mensagens>
+                            <app-mensagens [control]="tamanho" error="minlength" [text]="msgForm.min1"></app-mensagens>
+                        </div>
+                </div>
+            <!-- fim da linha-->
+             <!-- começo da linha -->
+             <div class="ui-g">
+                    <div class="ui-g-12 ui-md-6 ui-fluid">
+                        <label>Máscara do Título </label>
+                        <input pInputText type="text" name="mascaraTitulo" [(ngModel)]="atributo.mascaraTitulo" #mascaraTitulo="ngModel" required
+                            minlength="4">
+                        <app-mensagens [control]="mascaraTitulo" error="required" [text]="msgForm.required"></app-mensagens>
+                        <app-mensagens [control]="mascaraTitulo" error="minlength" [text]="msgForm.min4"></app-mensagens>
+                    </div>
+            </div>
+        <!-- fim da linha-->
+
+        <!-- começo da linha dos botões -->
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <button pButton type="submit" [disabled]="form.form.invalid" icon="pi pi-check" label="Salvar"></button>
+                <button pButton type="button" icon="pi pi-arrow-left" (click)="voltar()" label="Sair"></button>
+            </div>
+        </div>
+        <!-- fim da linha dos botões -->
+    </form>
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <p>Valores do Form Atributos:{{form.value | json }}</p>
+            <p>atributo:{{atributo | json }}</p>
+            <p>Form Está válido?{{form.valid }}</p>
+        </div>
+    </div>
+</page-container>

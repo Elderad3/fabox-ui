@@ -1,0 +1,72 @@
+<page-container [titulo]="titulo">
+
+    <form autocomplete="off" (ngSubmit)="salvar()" #usuForm="ngForm" [ngFormOptions]="{updateOn:'blur'}">
+
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Nome: </label>
+                <input pInputText type="text" name="nome" [(ngModel)]="usuario.nome" #nome="ngModel" required minlength="5">
+                <app-mensagens [control]="nome" error="required" text="Informe o nome"></app-mensagens>
+                <app-mensagens [control]="nome" error="minlength" text="Mínimo de 5 caracteres"></app-mensagens>
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Sobrenome: </label>
+                <input pInputText type="text" name="sobrenome" [(ngModel)]="usuario.sobrenome" #sobrenome="ngModel"
+                    required>
+                <app-mensagens [control]="sobrenome" error="required" text="Informe o Sobrenome"></app-mensagens>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Email: </label>
+                <input pInputText type="text" name="email" [(ngModel)]="usuario.email" #email="ngModel" required>
+                <app-mensagens [control]="email" error="required" text="Informe um email"></app-mensagens>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Nome de Usuário: </label>
+                <input pInputText type="text" name="nomeUsuario" [(ngModel)]="usuario.nomeUsuario" #nomeUsuario="ngModel"
+                    required>
+                <app-mensagens [control]="nomeUsuario" error="required" text="Informe um nome de usuário"></app-mensagens>
+            </div>
+
+            <div class="ui-g-12 ui-md-2 ui-fluid">
+                <label>Matrícula: </label>
+                <input pInputText type="text" name="matricula" [(ngModel)]="usuario.matricula">
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Grupo Permissão: </label>
+                <input pInputText type="text" name="grupoPermissao" [(ngModel)]="usuario.grupoPermissao"
+                    #grupoPermissao="ngModel" required>
+                <app-mensagens [control]="grupoPermissao" error="required" text="Informe o grupo permissão"></app-mensagens>
+            </div>
+
+            <div class="ui-g-12 ui-md-2 ui-fluid">
+                <label>Ativo: </label><br>
+                <!-- <p-selectButton [options]="ativo" name="isAtivo" [(ngModel)]="usuario.isAtivo"></p-selectButton> -->
+
+                <p-radioButton name="isAtivo" value="Sim" label="Sim" [(ngModel)]="usuario.isAtivo"
+                inputId="opt1" (click)="ativarUsuario()" ></p-radioButton> | 
+               <p-radioButton name="isAtivo" value="Não" label="Não" [(ngModel)]="usuario.isAtivo"
+                    inputId="opt2" (click)="desativarUsuario()" ></p-radioButton> 
+            </div>
+            
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <button pButton type="submit" [disabled]="usuForm.form.invalid" icon="pi pi-check" label="Salvar"></button>
+                <button pButton type="button" icon="pi pi-arrow-left" (click)="voltar()" label="Sair"></button>
+            </div>
+        </div>
+    </form>
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <p>Valores do Form:{{usuForm.value | json }}</p>
+            <p>Form Está válido?{{usuForm.valid }}</p>
+        </div>
+    </div>
+</page-container>

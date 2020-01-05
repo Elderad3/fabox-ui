@@ -1,0 +1,118 @@
+<page-container [titulo]="titulo">
+
+    <form autocomplete="off" (ngSubmit)="salvar()" #form="ngForm" [ngFormOptions]="{updateOn:'blur'}">
+
+        <!--começo da linha 1 -->
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-4">
+
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Data de Cadastro: </label>{{produto.dataCadastro | date:'dd/MM/yyyy, h:mm a' }}
+            </div>
+            <div class="ui-g-12 ui-md-2 ui-fluid">
+                <label>Ativo </label><br>
+                <p-inputSwitch name="ativo" [(ngModel)]="ativo"></p-inputSwitch>
+            </div>
+            <div class="ui-g-12 ui-md-2 ui-fluid">
+                <label>Bloqueado </label><br>
+                <p-inputSwitch name="bloqueado" [(ngModel)]="bloqueado"></p-inputSwitch>
+            </div>
+        </div>
+
+        <!-- Fim da linha 1 -->
+
+        <!-- começo da linha 2 -->
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-3 ui-fluid">
+                <label>SKU</label>
+                <p-inputMask name="sku" [(ngModel)]="produto.sku" #sku="ngModel" required minlength="5" mask="AAA-9999">
+                </p-inputMask>
+                <app-mensagens [control]="sku" error="required" [text]="msgForm.required"></app-mensagens>
+                <app-mensagens [control]="sku" error="minlength" [text]="msgForm.min5"></app-mensagens>
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label>Nome </label>
+                <input pInputText type="text" name="nome" [(ngModel)]="produto.nome" #nome="ngModel" required
+                    minlength="5">
+                <app-mensagens [control]="nome" error="required" [text]="msgForm.required"></app-mensagens>
+                <app-mensagens [control]="nome" error="minlength" [text]="msgForm.min5"></app-mensagens>
+            </div>
+
+        </div>
+        <!-- fim da linha 2 -->
+
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <p-card>
+                    <label>Estoque Atual </label>
+                    <h2>{{produto.estoqueAtual}} Unidades</h2>
+                </p-card>
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <p-card>
+                    <label>Custo Unitário Atual </label>
+                    <h2> R$ {{produto.custoUnitarioAtual | number:'1.2-2'}}</h2>
+                </p-card>
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <p-card>
+                    <label>Custo total Atual </label>
+                    <h2> R$ {{produto.custoTotalAtual| number:'1.2-2'}}</h2>
+                </p-card>
+            </div>
+
+        </div>
+
+        <!--começo da tabview-->
+        <p-tabView>
+            <p-tabPanel header="Classificação">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-2 ui-fluid">
+                        <label>Unidade de Consumo </label>
+                        <input pInputText type="text" name="unidadeConsumo" [(ngModel)]="produto.unidadeConsumo"
+                            #unidadeConsumo="ngModel" required>
+                        <app-mensagens [control]="unidadeConsumo" error="required" [text]="msgForm.required">
+                        </app-mensagens>
+                    </div>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Endereçamento">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-4 ui-fluid">
+                        <label>Localização </label>
+                        <input pInputText type="text" name="localizacao" [(ngModel)]="produto.localizacao"
+                            #localizacao="ngModel" required>
+                        <app-mensagens [control]="localizacao" error="required" [text]="msgForm.required">
+                        </app-mensagens>
+                    </div>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Movimentações">
+                <app-produto-movimentacoes-view *ngIf="produto.id" [produto]="produto"></app-produto-movimentacoes-view>
+            </p-tabPanel>
+        </p-tabView>
+        <!--Fim da tabview-->
+
+
+        <!-- começo da linha dos botões -->
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <button pButton type="submit" [disabled]="form.form.invalid" icon="pi pi-check" label="Salvar"></button>
+                <button pButton type="button" icon="pi pi-arrow-left" (click)="voltar()" label="Sair"></button>
+            </div>
+        </div>
+        <!-- fim da linha dos botões -->
+    </form>
+
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <p>Valores do Form:{{form.value | json }}</p>
+
+            <p>Produto:{{produto | json }}</p>
+            <p>Form Está válido?{{form.valid }}</p>
+        </div>
+    </div>
+
+</page-container>

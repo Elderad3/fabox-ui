@@ -1,0 +1,130 @@
+<page-container [titulo]="titulo">
+    <dialog-mensage [display]="display" [msgContent]="msgContent" (fechaDialogo)="fecharDialogoItem($event)">
+    </dialog-mensage>
+    <form autocomplete="off" (ngSubmit)="salvar()" #form="ngForm" [ngFormOptions]="{updateOn:'blur'}">
+
+        <!--começo da linha 1 -->
+        <div class="ui-g">
+            <div *ngIf="pedidoCompra.id" class="ui-g-12 ui-md-4 ui-fluid">
+                <label><b>Código: </b></label><b>{{pedidoCompra.id}}</b>
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Data de Criaçao: </label>{{pedidoCompra.dataCriacao | date:'dd/MM/yyyy, h:mm a' }}
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Status: </label>{{pedidoCompra.status }}
+
+            </div>
+        </div>
+        <!-- Fim da linha 1 -->
+
+        <!--começo da tabview de items-->
+        <p-tabView>
+            <p-tabPanel header="Produtos" leftIcon="pi pi-calendar">
+                <form autocomplete="off" #itemForm="ngForm">
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-8 ui-fluid">
+                            <p-autoComplete [(ngModel)]="item.produto" name="produto" placeholder="Pesquise um Produto"
+                                [suggestions]="listaDeProdutos" [immutable]="false" field="nome" #produto="ngModel"
+                                (completeMethod)="listarProdutosPorParametro($event)" required></p-autoComplete>
+                            <app-mensagens [control]="produto" error="required" [text]="msgForm.required">
+                            </app-mensagens>
+                        </div>
+                        <div class="ui-g-12 ui-md-2 ui-fluid">
+
+                            <input pInputText type="number" placeholder="Quantidade" [(ngModel)]="item.quantidade"
+                                name="quantidade" #quantidade="ngModel" required>
+                            <app-mensagens [control]="quantidade" error="min" [text]="msgForm.min1"></app-mensagens>
+                            <app-mensagens [control]="quantidade" error="required" [text]="msgForm.required">
+                            </app-mensagens>
+                        </div>
+                        <label></label>
+                        <div class="ui-g-12 ui-md-2 ui-fluid">
+                            <button *ngIf="isEdicao == false" type="button" pButton icon="pi pi-check"
+                                [disabled]="itemForm.form.invalid" (click)="inserirItem()" label="Adicionar"></button>
+                            <button *ngIf="isEdicao == true" type="button" pButton icon="pi pi-check"
+                                [disabled]="itemForm.form.invalid" (click)="adicionarItemEditado()" label="OK"></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="ui-g">
+                    <div class="ui-g-12  ui-md-12">
+                        <p-table #dt [columns]="cols" [value]="pedidoCompra.items" [resizableColumns]="true"
+                            [scrollable]="true" scrollHeight="200px">
+                            <ng-template pTemplate="colgroup" let-columns>
+                                <colgroup>
+                                    <col *ngFor="let col of columns" [style.width]="col.width">
+                                </colgroup>
+                            </ng-template>
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th *ngFor="let col of cols" pResizableColumn [pSortableColumn]="col.field">
+                                        {{col.header}}
+                                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                                    </th>
+                                    <th style="width:4%"></th>
+                                    <th style="width:4%"></th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-rowData>
+                                <tr [pSelectableRow]="rowData">
+                                    <td *ngFor="let col of cols" class="ui-resizable-column" [ngSwitch]="col.field">
+                                        <span *ngSwitchCase="'id'">{{rowData[col.field]}}</span>
+                                        <span
+                                            *ngSwitchCase="'produto.nome'">{{ carregarObjetoColuna(rowData, col) }}</span>
+                                        <span *ngSwitchCase="'quantidade'">{{rowData[col.field]}}</span>
+                                        <span *ngSwitchCase="'custoAtual'">R$ {{rowData[col.field] | number:'1.2-2'}}</span>
+                                        <span *ngSwitchCase="'custoTotal'">R$ {{rowData[col.field] | number:'1.2-2'}}</span>
+                                    </td>
+                                    <td style="width:4%">
+                                        <button pButton type="button" icon="pi pi-times"
+                                            (click)="removerItem(rowData)"></button>
+                                    </td>
+                                    <td style="width:4%">
+                                        <button pButton type="button" icon="pi pi-pencil"
+                                            (click)="editarItem(rowData)"></button>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="emptymessage" let-columns>
+                                <tr>
+                                    <td [attr.colspan]="columns.length">
+                                        Nenhum produto adicionado
+                                    </td>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="summary">
+                                Pedido de compra com {{pedidoCompra.items?.length}} produtos no valor total sugerido de
+                                R$
+                                {{calcularTotalItensPedido() | number:'1.2-2'}}
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+        <!--Fim da tabview de itens-->
+
+        <!-- começo da linha dos botões -->
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <button *ngIf="pedidoCompra.status == 'Em construção'" pButton icon="fa fa-share-square" type="submit"
+                    [disabled]="form.form.invalid" label="Enviar para aprovação"></button>
+                <button pButton type="submit" [disabled]="form.form.invalid" icon="fa fa-save" label="Salvar"></button>
+                <button *ngIf="pedidoCompra.status == 'Em análise'" pButton type="button"
+                    (click)="aprovarPedidoCompra()" label="Aprovar Pedido"></button>
+                <button *ngIf="pedidoCompra.status == 'Em análise'" pButton type="button"
+                    (click)="rejeitarPedidoCompra()" label="Rejeitar Pedido"></button>
+                <button pButton type="button" (click)="voltar()" icon="fa fa-times-circle" label="Sair"></button>
+            </div>
+        </div>
+        <!-- fim da linha dos botões -->
+    </form>
+    <!-- <div class="ui-g">
+        <div class="ui-g-12">
+            <p>Valores do Form:{{form.value | json }}</p>
+            <p>Form Está válido?{{form.valid }}</p>
+            <p>Valores do Form de itens:{{pedidoCompra.items | json }}</p>
+        </div>
+    </div> -->
+</page-container>

@@ -1,0 +1,188 @@
+<page-container [titulo]="titulo">
+
+    <form autocomplete="off" (ngSubmit)="salvarPessoa()" #form="ngForm" id="form" [ngFormOptions]="{updateOn:'blur'}">
+
+        <!--começo da linha 1 -->
+        <!-- <div class="ui-g">
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Data de Cadastro: </label>{{pessoa.dataCadastro | date:'dd/MM/yyyy, h:mm a' }}
+            </div>
+        </div> -->
+
+        <!-- Fim da linha 1 -->
+
+        <!-- começo da linha 2 -->
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-8 ui-fluid">
+                <label>Nome </label>
+                <input pInputText type="text" name="nome" [(ngModel)]="pessoa.nome" #nome="ngModel" required
+                    minlength="5">
+                <app-mensagens [control]="nome" error="required" [text]="msgForm.required"></app-mensagens>
+                <app-mensagens [control]="nome" error="minlength" [text]="msgForm.min5"></app-mensagens>
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid"> </div>
+        </div>
+        <!-- fim da linha 2 -->
+
+        <!-- começo da linha 3 -->
+        <!-- <div class="ui-g">
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Email </label>
+                <input pInputText type="text" name="email" [(ngModel)]="pessoa.email" #email="ngModel" required>
+                <app-mensagens [control]="email" error="required" [text]="msgForm.required"></app-mensagens>
+            </div>
+            <div class="ui-g-12 ui-md-2 ui-fluid">
+                <label>CNPJ </label>
+                <p-inputMask name="cnpj" [(ngModel)]="pessoa.cnpj" mask="99.999.999/9999-99"></p-inputMask>
+                  
+            </div>
+            <div class="ui-g-12 ui-md-4 ui-fluid">
+                <label>Telefone </label>
+                <p-inputMask name="telefone" [(ngModel)]="pessoa.telefone" #telefone="ngModel" required
+                    mask="(99) 99999-9999"></p-inputMask>
+                <app-mensagens [control]="telefone" error="required" [text]="msgForm.required"></app-mensagens>
+            </div>
+            <div class="ui-g-12 ui-md-3 ui-fluid"> </div>
+
+        </div> -->
+        <!-- fim da linha 3 -->
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------
+ início da Tabview de endereços
+-------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!--começo da tabview de endereço-->
+
+        <p-tabView>
+            <p-tabPanel header="Endereços" leftIcon="pi pi-calendar">
+                <div class="ui-g">
+                    <div class="ui-g-12  ui-md-8">
+                        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                        <input #gb type="text" pInputText size="50" placeholder="Filtro Global"> 
+                    </div>
+
+                    <div  class="ui-g-12  ui-md-4 ui-rtl" dir="rtl">
+                        <button pButton type="button" [disabled]="!enderecoSelecionado" (click)="editarItem()"
+                            label="Editar" icon="pi pi-pencil"></button>
+                        <button pButton type="button" [disabled]="!enderecoSelecionado" (click)="removerItem()"
+                                    label="Excluir" icon="pi pi-trash "></button>
+                        <button pButton type="button" (click)="prepararIncersaoItem()" label="Inserir"
+                            icon="pi pi-plus"></button>
+                    </div>
+                      
+                   
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-12  ui-md-12">
+                        <p-table #dt [columns]="cols" [value]="pessoa.enderecos" selectionMode="single"
+                            [(selection)]="enderecoSelecionado" [resizableColumns]="true">
+                            <ng-template pTemplate="colgroup" let-columns>
+                                <colgroup>
+                                    <col *ngFor="let col of columns" [style.width]="col.width">
+                                </colgroup>
+                            </ng-template>
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th *ngFor="let col of cols" pResizableColumn>{{col.header}}</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                                <tr [pSelectableRow]="rowData">
+                                    <td *ngFor="let col of columns">
+                                        {{rowData[col.field]}}
+                                    </td>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="emptymessage" let-columns>
+                                <tr>
+                                    <td [attr.colspan]="cols.length">
+                                        Nenhum registro encontrado
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </div>
+
+                <!-- Início do diálogo de cadastro de itens da tabela -->
+                <p-dialog width="700" [header]="headerModal" [(visible)]="displayDialog" modal="modal"
+                    [responsive]="true" showEffect="fade">
+                    <form autocomplete="off" #enderecoForm="ngForm" id="enderecoForm" [ngFormOptions]="{updateOn:'blur'}">
+                        <div class="ui-g">
+                            <div class="ui-g-12 ui-md-12 ui-fluid">
+                                <label>Cidade</label>
+                                <input pInputText type="text" name="cidade" [(ngModel)]="endereco.cidade"
+                                    #cidade="ngModel" required minlength="5">
+                                <app-mensagens [control]="cidade" error="required" [text]="msgForm.required">
+                                </app-mensagens>
+                                <app-mensagens [control]="cidade" error="minlength" [text]="msgForm.min5">
+                                </app-mensagens>
+                            </div>
+                        </div>
+                        <!-- <div class="ui-g">
+                            <div class="ui-g-12 ui-md-6 ui-fluid">
+                                <label>UF</label>
+                                <input pInputText type="text" name="uf" [(ngModel)]="endereco.uf" #uf="ngModel" required
+                                    minlength="2">
+                                <app-mensagens [control]="uf" error="required" [text]="msgForm.required">
+                                </app-mensagens>
+                                <app-mensagens [control]="uf" error="minlength" [text]="msgForm.min2"></app-mensagens>
+                            </div>
+                            <div class="ui-g-12 ui-md-6 ui-fluid">
+                                <label>Cep</label>
+                                <p-inputMask name="cep" [(ngModel)]="endereco.cep" #cep="ngModel" required minlength="5"
+                                    mask="99999-999">
+                                </p-inputMask>
+                                <app-mensagens [control]="cep" error="required" [text]="msgForm.required">
+                                </app-mensagens>
+                                <app-mensagens [control]="cep" error="minlength" [text]="msgForm.min5"></app-mensagens>
+                            </div>
+                        </div> -->
+                        <!-- <div class="ui-g">
+                            <div class="ui-g-12 ui-md-12 ui-fluid">
+                                <label>Complemento</label>
+                                <input pInputText type="text" name="complemento" [(ngModel)]="endereco.complemento"
+                                    #complemento="ngModel" required minlength="5">
+                                <app-mensagens [control]="complemento" error="required" [text]="msgForm.required">
+                                </app-mensagens>
+                                <app-mensagens [control]="complemento" error="minlength" [text]="msgForm.min5">
+                                </app-mensagens>
+                            </div>
+                        </div> -->
+                        <div class="ui-g">
+                            <div class="ui-g-12 ui-md-12 ui-rtl" dir="rtl">
+                                <button type="button" pButton icon="pi pi-check" [disabled]="enderecoForm.form.invalid"
+                                    (click)="inserirItem()" label="Confirmar"></button>
+                                <button type="button" pButton icon="pi pi-times" (click)="cancelar()"
+                                    label="Cancelar"></button>
+                            </div>
+                        </div>
+                    </form>
+                </p-dialog>
+
+                <!-- Fim do diálogo de cadastro de itens da tabela -->
+            </p-tabPanel>
+        </p-tabView>
+        <!--Fim da tabview de endereço-->
+
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------------
+ fim  da Tabview de endereços
+-------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- começo da linha dos botões -->
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <button pButton type="submit" [disabled]="form.form.invalid" icon="pi pi-check" label="Salvar"></button>
+                <button pButton type="button" (click)="voltar()" label="Sair"></button>
+            </div>
+        </div>
+        <!-- fim da linha dos botões -->
+    </form>
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <p>Valores do Form Pessoas:{{form.value | json }}</p>
+            <p>pessoa:{{pessoa | json }}</p>
+            <p>enderecos:{{pessoa.enderecos | json }}</p>
+            <p>Form Está válido?{{form.valid }}</p>
+        </div>
+    </div>
+</page-container>

@@ -1,0 +1,1509 @@
+{
+  "extrato": [],
+  "transacao": [],
+  "ordemCompra": [
+    {
+      "dataCriacao": "2019-06-06T23:59:44.616Z",
+      "status": "Recebido",
+      "valorTotal": 0,
+      "items": [
+        {
+          "produto": {
+            "dataCadastro": "2019-06-03T04:34:30.137Z",
+            "estoqueMinimo": 0,
+            "estoqueMaximo": 0,
+            "estoqueAtual": 17,
+            "custoUnitarioAtual": 85.52941176470588,
+            "custoTotalAtual": 1454,
+            "id": 10,
+            "sku": "AAA-2312",
+            "nome": "Fio de nylon",
+            "isAtivo": "Sim",
+            "isBloqueado": "Não"
+          },
+          "quantidade": 4,
+          "custoAtual": 85.52941176470588,
+          "custoTotal": 342.11764705882354
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "pedidoCompra": [
+    {
+      "dataCriacao": "2019-06-03T04:36:59.359Z",
+      "status": "Aprovado",
+      "valorTotal": 0,
+      "items": [
+        {
+          "produto": {
+            "dataCadastro": "2019-06-03T04:33:07.725Z",
+            "estoqueMinimo": 0,
+            "estoqueMaximo": 0,
+            "estoqueAtual": 6,
+            "custoUnitarioAtual": 4,
+            "custoTotalAtual": 24,
+            "id": 4,
+            "sku": "AAA-8678",
+            "nome": "Lâmpada",
+            "isAtivo": "Sim",
+            "isBloqueado": "Não"
+          },
+          "quantidade": 3,
+          "custoAtual": 4,
+          "custoTotal": 12
+        },
+        {
+          "produto": {
+            "dataCadastro": "2019-06-03T04:34:30.137Z",
+            "estoqueMinimo": 0,
+            "estoqueMaximo": 0,
+            "estoqueAtual": 17,
+            "custoUnitarioAtual": 85.52941176470588,
+            "custoTotalAtual": 1454,
+            "id": 10,
+            "sku": "AAA-2312",
+            "nome": "Fio de nylon",
+            "isAtivo": "Sim",
+            "isBloqueado": "Não"
+          },
+          "quantidade": 4,
+          "custoAtual": 85.52941176470588,
+          "custoTotal": 342.11764705882354
+        },
+        {
+          "produto": {
+            "dataCadastro": "2019-06-03T04:33:40.213Z",
+            "estoqueMinimo": 0,
+            "estoqueMaximo": 0,
+            "estoqueAtual": 3,
+            "custoUnitarioAtual": 20,
+            "custoTotalAtual": 60,
+            "id": 7,
+            "sku": "AAA-2312",
+            "nome": "Cano PVC",
+            "isAtivo": "Sim",
+            "isBloqueado": "Não"
+          },
+          "quantidade": 2,
+          "custoAtual": 20,
+          "custoTotal": 40
+        }
+      ],
+      "id": 1
+    },
+    {
+      "dataCriacao": "2019-06-03T05:49:52.836Z",
+      "status": "Rejeitado",
+      "valorTotal": 0,
+      "items": [
+        {
+          "produto": {
+            "dataCadastro": "2019-06-03T04:34:30.137Z",
+            "estoqueMinimo": 0,
+            "estoqueMaximo": 0,
+            "estoqueAtual": 17,
+            "custoUnitarioAtual": 85.52941176470588,
+            "custoTotalAtual": 1454,
+            "id": 10,
+            "sku": "AAA-2312",
+            "nome": "Fio de nylon",
+            "isAtivo": "Sim",
+            "isBloqueado": "Não"
+          },
+          "quantidade": 3,
+          "custoAtual": 85.52941176470588,
+          "custoTotal": 256.5882352941177
+        }
+      ],
+      "id": 2
+    },
+    {
+      "dataCriacao": "2019-08-16T00:35:48.732Z",
+      "status": "Em análise",
+      "valorTotal": 0,
+      "items": [
+        {
+          "produto": {
+            "dataCadastro": "2019-06-03T04:34:30.137Z",
+            "estoqueMinimo": 0,
+            "estoqueMaximo": 0,
+            "estoqueAtual": 17,
+            "custoUnitarioAtual": 85.52941176470588,
+            "custoTotalAtual": 1454,
+            "id": 10,
+            "sku": "AAA-2312",
+            "nome": "Fio de nylon",
+            "isAtivo": "Sim",
+            "isBloqueado": "Não"
+          },
+          "quantidade": 3,
+          "custoAtual": 85.52941176470588,
+          "custoTotal": 256.5882352941177
+        }
+      ],
+      "id": 3
+    },
+    {
+      "dataCriacao": "2019-08-16T00:35:48.732Z",
+      "status": "Aprovado",
+      "valorTotal": 0,
+      "items": [
+        {
+          "produto": {
+            "dataCadastro": "2019-06-03T04:34:30.137Z",
+            "estoqueMinimo": 0,
+            "estoqueMaximo": 0,
+            "estoqueAtual": 17,
+            "custoUnitarioAtual": 85.52941176470588,
+            "custoTotalAtual": 1454,
+            "id": 10,
+            "sku": "AAA-2312",
+            "nome": "Fio de nylon",
+            "isAtivo": "Sim",
+            "isBloqueado": "Não"
+          },
+          "quantidade": 3,
+          "custoAtual": 85.52941176470588,
+          "custoTotal": 256.5882352941177
+        }
+      ],
+      "id": 4
+    }
+  ],
+  "usuario": [
+    {
+      "isAtivo": "Sim",
+      "nome": "yyyyyyyyyyyyyy",
+      "sobrenome": "yyyyyyyyyyyyyy",
+      "email": "yyyyyyyyyyyy",
+      "nomeUsuario": "yyyyyyyyyy",
+      "matricula": "yyyyyyyyyyyy",
+      "grupoPermissao": "yyyyyyyyyyyy",
+      "id": 1
+    }
+  ],
+  "pessoa": [
+    {
+      "id": 1,
+      "nome": "Logus Tecnologia",
+      "email": "elderad@gmail.com",
+      "telefone": "(53) 42342-3423",
+      "cnpj": "23.423.423/4234-23",
+      "dataCadastro": "2019-05-12T14:36:32.329Z",
+      "enderecos": [
+        {
+          "id": null,
+          "cidade": "Endereço 01",
+          "uf": "DF",
+          "cep": "12312-312",
+          "complemento": "Rua 1"
+        },
+        {
+          "id": null,
+          "cidade": "Brasília",
+          "uf": "Distrito Federal",
+          "cep": "72302-052",
+          "complemento": "testeasd",
+          "pessoaId": 1
+        }
+      ]
+    },
+    {
+      "nome": "Elder Serviços de Software",
+      "email": "elderad3",
+      "telefone": "(23) 42342-3423",
+      "cnpj": "12.312.312/3123-12",
+      "dataCadastro": "2019-05-12T18:17:59.792Z",
+      "enderecos": [
+        {
+          "id": null,
+          "cidade": "endereço 01",
+          "uf": "df",
+          "cep": "12312-312",
+          "complemento": "Rua01"
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "esquema": [
+    {
+      "mascara": "DB_FABOX",
+      "tabelas": [
+        {
+          "mascara": "TBL_PRODUTO",
+          "colunas": [
+            {
+              "id": 1,
+              "mascara": "COD_PRODUTO"
+            },
+            {
+              "id": 2,
+              "mascara": "NOM_PRODUTO"
+            }
+          ],
+          "id": 1
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "tabela": [
+    {
+      "id": 1,
+      "mascara": "TBL_PRODUTO",
+      "colunas": [
+        {
+          "id": 1,
+          "mascara": "COD_PRODUTO"
+        },
+        {
+          "id": 2,
+          "mascara": "NOM_PRODUTO"
+        }
+      ]
+    }
+  ],
+  "coluna": [
+    {
+      "id": 1,
+      "mascara": "COD_PRODUTO"
+    },
+    {
+      "id": 2,
+      "mascara": "NOM_PRODUTO"
+    }
+  ],
+  "atributo": [
+    {
+      "nome": "Produto",
+      "esquema": {
+        "tabelas": [
+          {
+            "mascara": "TBL_PRODUTO",
+            "colunas": [
+              {
+                "id": 1,
+                "mascara": "COD_PRODUTO"
+              },
+              {
+                "id": 2,
+                "mascara": "NOM_PRODUTO"
+              }
+            ],
+            "id": 1
+          }
+        ],
+        "id": 1,
+        "mascara": "DB_FABOX"
+      },
+      "tabela": {
+        "mascara": "TBL_PRODUTO",
+        "colunas": [
+          {
+            "id": 1,
+            "mascara": "COD_PRODUTO"
+          },
+          {
+            "id": 2,
+            "mascara": "NOM_PRODUTO"
+          }
+        ],
+        "id": 1
+      },
+      "colunasDisponiveis": [],
+      "colunasSelecionadas": [
+        {
+          "id": 1,
+          "mascara": "COD_PRODUTO"
+        }
+      ],
+      "tamanho": "2",
+      "mascaraTitulo": "[COD_PRODUTO] - [NOM_PRODUTO]",
+      "id": 1
+    }
+  ],
+  "produto": [
+    {
+      "dataCadastro": "2019-06-04T18:57:07.879Z",
+      "estoqueMinimo": 0,
+      "estoqueMaximo": 0,
+      "estoqueAtual": 6,
+      "custoUnitarioAtual": 4,
+      "custoTotalAtual": 24,
+      "id": 4,
+      "sku": "AAA-8678",
+      "nome": "Lâmpada",
+      "isAtivo": "Sim",
+      "isBloqueado": "Não"
+    },
+    {
+      "dataCadastro": "2019-06-03T04:33:24.947Z",
+      "estoqueMinimo": 0,
+      "estoqueMaximo": 0,
+      "estoqueAtual": 4,
+      "custoUnitarioAtual": 1.12,
+      "custoTotalAtual": 4.48,
+      "id": 5,
+      "sku": "AAA-2312",
+      "nome": "Bocal de Lâmpada",
+      "isAtivo": "Não",
+      "isBloqueado": "Não"
+    },
+    {
+      "dataCadastro": "2019-06-03T04:33:40.213Z",
+      "estoqueMinimo": 0,
+      "estoqueMaximo": 0,
+      "estoqueAtual": 3,
+      "custoUnitarioAtual": 20,
+      "custoTotalAtual": 60,
+      "id": 7,
+      "sku": "AAA-2312",
+      "nome": "Cano PVC",
+      "isAtivo": "Sim",
+      "isBloqueado": "Não"
+    },
+    {
+      "dataCadastro": "2019-06-03T04:33:54.284Z",
+      "estoqueMinimo": 0,
+      "estoqueMaximo": 0,
+      "estoqueAtual": 3,
+      "custoUnitarioAtual": 0.31,
+      "custoTotalAtual": 0.9299999999999999,
+      "id": 8,
+      "sku": "AAA-2312",
+      "nome": "Cabo de internet",
+      "isAtivo": "Sim",
+      "isBloqueado": "Não"
+    },
+    {
+      "dataCadastro": "2019-06-03T04:34:12.837Z",
+      "estoqueMinimo": 0,
+      "estoqueMaximo": 0,
+      "estoqueAtual": 4,
+      "custoUnitarioAtual": 3,
+      "custoTotalAtual": 12,
+      "id": 9,
+      "sku": "AAA-2312",
+      "nome": "Eliminador",
+      "isAtivo": "Sim",
+      "isBloqueado": "Não"
+    },
+    {
+      "dataCadastro": "2019-06-03T04:34:30.137Z",
+      "estoqueMinimo": 0,
+      "estoqueMaximo": 0,
+      "estoqueAtual": 17,
+      "custoUnitarioAtual": 85.52941176470588,
+      "custoTotalAtual": 1454,
+      "id": 10,
+      "sku": "AAA-2312",
+      "nome": "Fio de nylon",
+      "isAtivo": "Sim",
+      "isBloqueado": "Não"
+    }
+  ],
+  "movimento": [
+    {
+      "quantidade": 3,
+      "custoUnitario": 10,
+      "custoTotal": 30,
+      "dataMovimento": "2019-04-28T15:15:59.551Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 3,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 30,
+        "sku": "AAA-2312",
+        "nome": "Cano PVC",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 7
+      },
+      "id": 1
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 20,
+      "custoTotal": 100,
+      "dataMovimento": "2019-05-14T00:11:35.540Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 5,
+        "custoUnitarioAtual": 20,
+        "custoTotalAtual": 100,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 2
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 20,
+      "custoTotal": 120,
+      "dataMovimento": "2019-05-14T00:13:48.159Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": -20,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 3
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 100,
+      "custoTotal": 400,
+      "dataMovimento": "2019-05-14T00:16:21.940Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 4,
+        "custoUnitarioAtual": 95,
+        "custoTotalAtual": 380,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 4
+    },
+    {
+      "quantidade": 3,
+      "custoUnitario": 10,
+      "custoTotal": 30,
+      "dataMovimento": "2019-05-14T00:24:45.119Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 3,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 30,
+        "sku": "AAA-2312",
+        "nome": "Cabo de internet",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 8
+      },
+      "id": 5
+    },
+    {
+      "quantidade": 3,
+      "custoUnitario": 10,
+      "custoTotal": 30,
+      "dataMovimento": "2019-05-14T00:25:19.786Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-2312",
+        "nome": "Cabo de internet",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 8
+      },
+      "id": 6
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 20,
+      "custoTotal": 100,
+      "dataMovimento": "2019-05-14T00:38:06.479Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 5,
+        "custoUnitarioAtual": 20,
+        "custoTotalAtual": 100,
+        "sku": "AAA-2312",
+        "nome": "Eliminador",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 9
+      },
+      "id": 7
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 20,
+      "custoTotal": 100,
+      "dataMovimento": "2019-05-14T00:38:52.628Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-2312",
+        "nome": "Eliminador",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 9
+      },
+      "id": 8
+    },
+    {
+      "quantidade": 3,
+      "custoUnitario": 1,
+      "custoTotal": 3,
+      "dataMovimento": "2019-05-14T00:45:23.628Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 3,
+        "custoUnitarioAtual": 1,
+        "custoTotalAtual": 3,
+        "sku": "AAA-2312",
+        "nome": "Bocal de Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 5
+      },
+      "id": 9
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 10,
+      "custoTotal": 50,
+      "dataMovimento": "2019-05-14T00:50:42.492Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 5,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 50,
+        "sku": "AAA-2312",
+        "nome": "Cabo de internet",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 8
+      },
+      "id": 10
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 10,
+      "custoTotal": 50,
+      "dataMovimento": "2019-05-14T00:51:22.295Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-2312",
+        "nome": "Cabo de internet",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 8
+      },
+      "id": 11
+    },
+    {
+      "quantidade": 3,
+      "custoUnitario": 10,
+      "custoTotal": 30,
+      "dataMovimento": "2019-05-14T00:55:29.260Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-2312",
+        "nome": "Cano PVC",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 7
+      },
+      "id": 12
+    },
+    {
+      "quantidade": 3,
+      "custoUnitario": 1,
+      "custoTotal": 3,
+      "dataMovimento": "2019-05-14T00:57:22.293Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-2312",
+        "nome": "Bocal de Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 5
+      },
+      "id": 13
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 95,
+      "custoTotal": 380,
+      "dataMovimento": "2019-05-14T01:14:12.774Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 14
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 10,
+      "custoTotal": 50,
+      "dataMovimento": "2019-05-14T01:19:02.553Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 5,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 50,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 15
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 10,
+      "custoTotal": 50,
+      "dataMovimento": "2019-05-14T01:20:29.583Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 16
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 10,
+      "custoTotal": 40,
+      "dataMovimento": "2019-05-14T01:32:48.194Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 4,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 40,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 17
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 10,
+      "custoTotal": 40,
+      "dataMovimento": "2019-05-14T01:34:26.602Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 18
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 10,
+      "custoTotal": 40,
+      "dataMovimento": "2019-05-14T01:37:38.235Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 4,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 40,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 19
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 10,
+      "custoTotal": 40,
+      "dataMovimento": "2019-05-14T01:38:16.864Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 20
+    },
+    {
+      "quantidade": 6,
+      "custoUnitario": 10,
+      "custoTotal": 60,
+      "dataMovimento": "2019-05-14T01:42:29.793Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 6,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 60,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 4
+      },
+      "id": 21
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 120,
+      "custoTotal": 600,
+      "dataMovimento": "2019-05-14T01:58:10.386Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 5,
+        "custoUnitarioAtual": 120,
+        "custoTotalAtual": 600,
+        "sku": "AAA-2312",
+        "nome": "Cano PVC",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 7
+      },
+      "id": 22
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 130,
+      "custoTotal": 650,
+      "dataMovimento": "2019-05-14T02:00:05.113Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 5,
+        "custoUnitarioAtual": 130,
+        "custoTotalAtual": 650,
+        "sku": "AAA-2312",
+        "nome": "Eliminador",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 9
+      },
+      "id": 23
+    },
+    {
+      "quantidade": 8,
+      "custoUnitario": 15,
+      "custoTotal": 120,
+      "dataMovimento": "2019-05-14T02:00:29.935Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 8,
+        "custoUnitarioAtual": 15,
+        "custoTotalAtual": 120,
+        "sku": "AAA-2312",
+        "nome": "Cabo de internet",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 8
+      },
+      "id": 24
+    },
+    {
+      "quantidade": 7,
+      "custoUnitario": 10,
+      "custoTotal": 70,
+      "dataMovimento": "2019-05-14T02:43:47.497Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-02-03T20:33:01.957Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 7,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 70,
+        "sku": "AAA-2312",
+        "nome": "Bocal de Lâmpada",
+        "unidadeConsumo": "UN",
+        "localizacao": "Almoxarifado 1",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não",
+        "id": 5
+      },
+      "id": 25
+    },
+    {
+      "quantidade": 7,
+      "custoUnitario": 10,
+      "custoTotal": 70,
+      "dataMovimento": "2019-06-01T19:36:15.965Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T19:36:16.034Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "id": 5,
+        "sku": "AAA-2312",
+        "nome": "Bocal de Lâmpada",
+        "isAtivo": "Não",
+        "isBloqueado": "Não"
+      },
+      "id": 26
+    },
+    {
+      "quantidade": 6,
+      "custoUnitario": 10,
+      "custoTotal": 60,
+      "dataMovimento": "2019-06-01T19:38:20.010Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T19:38:20.325Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "id": 4,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 27
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 120,
+      "custoTotal": 600,
+      "dataMovimento": "2019-06-01T19:50:48.094Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T19:50:48.170Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "id": 7,
+        "sku": "AAA-2312",
+        "nome": "Cano PVC",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 28
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 130,
+      "custoTotal": 650,
+      "dataMovimento": "2019-06-01T20:06:34.210Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T20:06:34.243Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "id": 9,
+        "sku": "AAA-2312",
+        "nome": "Eliminador",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 29
+    },
+    {
+      "quantidade": 8,
+      "custoUnitario": 15,
+      "custoTotal": 120,
+      "dataMovimento": "2019-06-01T20:09:51.609Z",
+      "produto": {
+        "dataCadastro": "2019-06-01T20:09:51.644Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "id": 8,
+        "sku": "AAA-2312",
+        "nome": "Cabo de internet",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "id": 30
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 10,
+      "custoTotal": 40,
+      "dataMovimento": "2019-06-01T20:10:53.314Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T20:10:53.342Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 4,
+        "custoUnitarioAtual": 10,
+        "custoTotalAtual": 40,
+        "id": 4,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 31
+    },
+    {
+      "quantidade": 5,
+      "custoUnitario": 110,
+      "custoTotal": 550,
+      "dataMovimento": "2019-06-01T20:11:18.406Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T20:11:18.730Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 5,
+        "custoUnitarioAtual": 110,
+        "custoTotalAtual": 550,
+        "id": 5,
+        "sku": "AAA-2312",
+        "nome": "Bocal de Lâmpada",
+        "isAtivo": "Não",
+        "isBloqueado": "Não"
+      },
+      "id": 32
+    },
+    {
+      "quantidade": 3,
+      "custoUnitario": 110,
+      "custoTotal": 330,
+      "dataMovimento": "2019-06-01T20:11:51.178Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T20:11:51.213Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 2,
+        "custoUnitarioAtual": 110,
+        "custoTotalAtual": 220,
+        "id": 5,
+        "sku": "AAA-2312",
+        "nome": "Bocal de Lâmpada",
+        "isAtivo": "Não",
+        "isBloqueado": "Não"
+      },
+      "id": 33
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 10,
+      "custoTotal": 40,
+      "dataMovimento": "2019-06-01T20:12:40.472Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T20:12:40.505Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": null,
+        "custoTotalAtual": 0,
+        "id": 4,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 34
+    },
+    {
+      "quantidade": 2,
+      "custoUnitario": 110,
+      "custoTotal": 220,
+      "dataMovimento": "2019-06-01T20:15:27.624Z",
+      "operacao": {
+        "id": 2,
+        "nome": "Saída",
+        "valor": "S"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-01T20:15:27.956Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 0,
+        "custoUnitarioAtual": 0,
+        "custoTotalAtual": 0,
+        "id": 5,
+        "sku": "AAA-2312",
+        "nome": "Bocal de Lâmpada",
+        "isAtivo": "Não",
+        "isBloqueado": "Não"
+      },
+      "id": 35
+    },
+    {
+      "quantidade": 11,
+      "custoUnitario": 130,
+      "custoTotal": 1430,
+      "dataMovimento": "2019-06-02T23:20:36.854Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-02T23:20:36.893Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 11,
+        "custoUnitarioAtual": 130,
+        "custoTotalAtual": 1430,
+        "id": 10,
+        "sku": "AAA-2312",
+        "nome": "Fio de nylon",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 36
+    },
+    {
+      "quantidade": 6,
+      "custoUnitario": 4,
+      "custoTotal": 24,
+      "dataMovimento": "2019-06-03T04:33:07.675Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-03T04:33:07.725Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 6,
+        "custoUnitarioAtual": 4,
+        "custoTotalAtual": 24,
+        "id": 4,
+        "sku": "AAA-8678",
+        "nome": "Lâmpada",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 37
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 1.12,
+      "custoTotal": 4.48,
+      "dataMovimento": "2019-06-03T04:33:24.918Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-03T04:33:24.947Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 4,
+        "custoUnitarioAtual": 1.12,
+        "custoTotalAtual": 4.48,
+        "id": 5,
+        "sku": "AAA-2312",
+        "nome": "Bocal de Lâmpada",
+        "isAtivo": "Não",
+        "isBloqueado": "Não"
+      },
+      "id": 38
+    },
+    {
+      "quantidade": 3,
+      "custoUnitario": 20,
+      "custoTotal": 60,
+      "dataMovimento": "2019-06-03T04:33:40.184Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-03T04:33:40.213Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 3,
+        "custoUnitarioAtual": 20,
+        "custoTotalAtual": 60,
+        "id": 7,
+        "sku": "AAA-2312",
+        "nome": "Cano PVC",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 39
+    },
+    {
+      "quantidade": 3,
+      "custoUnitario": 0.31,
+      "custoTotal": 0.9299999999999999,
+      "dataMovimento": "2019-06-03T04:33:54.246Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-03T04:33:54.284Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 3,
+        "custoUnitarioAtual": 0.31,
+        "custoTotalAtual": 0.9299999999999999,
+        "id": 8,
+        "sku": "AAA-2312",
+        "nome": "Cabo de internet",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 40
+    },
+    {
+      "quantidade": 4,
+      "custoUnitario": 3,
+      "custoTotal": 12,
+      "dataMovimento": "2019-06-03T04:34:12.792Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-03T04:34:12.837Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 4,
+        "custoUnitarioAtual": 3,
+        "custoTotalAtual": 12,
+        "id": 9,
+        "sku": "AAA-2312",
+        "nome": "Eliminador",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 41
+    },
+    {
+      "quantidade": 6,
+      "custoUnitario": 4,
+      "custoTotal": 24,
+      "dataMovimento": "2019-06-03T04:34:30.102Z",
+      "operacao": {
+        "id": 1,
+        "nome": "Entrada",
+        "valor": "E"
+      },
+      "produto": {
+        "dataCadastro": "2019-06-03T04:34:30.137Z",
+        "estoqueMinimo": 0,
+        "estoqueMaximo": 0,
+        "estoqueAtual": 17,
+        "custoUnitarioAtual": 85.52941176470588,
+        "custoTotalAtual": 1454,
+        "id": 10,
+        "sku": "AAA-2312",
+        "nome": "Fio de nylon",
+        "isAtivo": "Sim",
+        "isBloqueado": "Não"
+      },
+      "id": 42
+    }
+  ]
+}

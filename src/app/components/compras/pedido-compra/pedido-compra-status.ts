@@ -1,0 +1,6 @@
+export const EM_CONSTRUCAO = "Em construção"
+export const EM_ANALISE = "Em análise"
+export const REJEITADO = "Rejeitado"
+export const CANCELADO = "Cancelado"
+export const APROVADO = "Aprovado"
+export const ORDEM_GERADA = "Ordem Gerada" 

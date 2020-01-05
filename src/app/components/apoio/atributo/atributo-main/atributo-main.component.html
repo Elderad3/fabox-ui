@@ -1,0 +1,55 @@
+<page-container [titulo]="titulo">
+<dialog-mensage [display]="display" [msgContent]="msgContent" (fechaDialogo)="fecharDialogoItem($event)"></dialog-mensage>
+<div class="ui-g">
+    <div class="ui-g-12  ui-md-4  ui-fluid">
+    <input #gb type="text" pInputText placeholder="Filtro Global"
+                (input)="dt.filterGlobal($event.target.value, 'contains')"> 
+    </div>
+    <div class="ui-g-12  ui-md-8 ui-rtl" dir="rtl">
+        <button pButton type="button" [disabled]="!atributoSelecionado" (click)="editar()" label="Editar"
+            icon="pi pi-pencil"></button>
+        <button pButton type="button" [disabled]="!atributoSelecionado" (click)="remover()" label="Excluir"
+            icon="pi pi-trash " class="ui-button-danger"></button>
+        <button pButton type="button" routerLink="/atributoEdit" label="Inserir" icon="pi pi-plus"></button> 
+    </div>
+</div>
+
+<div class="ui-g">
+    <div class="ui-g-12 ui-md-12"> 
+        <p-table #dt [columns]="cols" [value]="atributos" selectionMode="single" [(selection)]="atributoSelecionado" 
+            dataKey="id" resizableColumns="true">
+            <ng-template pTemplate="colgroup">
+                <colgroup>
+                    <col *ngFor="let col of cols" [style.width]="col.width">
+                </colgroup>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of cols" pResizableColumn [pSortableColumn]="col.field">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData>
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of cols" class="ui-resizable-column" [ngSwitch]="col.field">
+                            <span *ngSwitchCase="'id'">{{rowData[col.field]}}</span>
+                            <span *ngSwitchCase="'nome'">{{rowData[col.field]}}</span>
+                            <span *ngSwitchCase="'esquema.mascara'">{{carregarObjetoColuna(rowData, col)}}</span>
+                            <span *ngSwitchCase="'tabela.mascara'">{{carregarObjetoColuna(rowData, col) }}</span>
+                            <span *ngSwitchCase="'mascaraTitulo'">{{rowData[col.field]}}</span>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage" let-columns>
+                <tr>
+                    <td [attr.colspan]="cols.length">
+                        Nenhum registro encontrado
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+</page-container>
